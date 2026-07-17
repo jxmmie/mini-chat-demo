@@ -122,7 +122,7 @@ function Chat_page({}: Props) {
     setUnreadCounts(prev => ({ ...prev, [uid]: 0 }))
   }
 
-  // 5. ดึงข้อความแชท และ อัปเดตข้อความที่ยังไม่ได้อ่านให้เป็น `isRead: true`
+  //  ดึงข้อความแชท และ อัปเดตข้อความที่ยังไม่ได้อ่านให้เป็น `isRead: true`
   useEffect(() => {
     const currentUser = auth.currentUser
     if (!currentUser || !selectedUserId) {
@@ -207,7 +207,7 @@ function Chat_page({}: Props) {
     return () => unsubscribeMessages()
   }, [selectedUserId])
 
-  // 6. 🔔 ระบบนับจำนวนแจ้งเตือนที่แท้จริงแบบ Realtime ด้วยเงื่อนไข isRead === false
+  //  ระบบนับจำนวนแจ้งเตือนที่แท้จริงแบบ Realtime ด้วยเงื่อนไข isRead === false
   useEffect(() => {
     const currentUser = auth.currentUser
     if (loadingAuth || !currentUser || usersList.length === 0) return
@@ -289,11 +289,9 @@ function Chat_page({}: Props) {
       <div className="w-[950px] h-[800px] bg-white/40 backdrop-blur-xl shadow-2xl border border-white/40 flex flex-col rounded-none z-10 overflow-hidden">
         <Header_component />
 
-        {/* 🛠️ จุดที่ 1: เอา items-center ออก และเพิ่ม overflow-hidden เพื่อให้ flex ขยายเต็มความสูงและล็อคขอบเขต */}
+
         <div className="flex-1 w-full flex flex-row p-2 bg-transparent gap-1 overflow-hidden">
-          
-          {/* ฝั่งซ้าย: รายชื่อเพื่อน */}
-          {/* 🛠️ จุดที่ 2: เพิ่ม overflow-hidden เพื่อล็อคความสูงของกล่องรายชื่อเพื่อน */}
+
           <div className="w-[320px] h-full bg-gray-100 border border-gray-100 flex flex-col overflow-hidden">
             <div className="w-full h-20 bg-white border-b border-gray-100 flex items-center justify-between p-4 flex-shrink-0">
               <span className="text-gray-800 font-bold text-sm truncate">{auth.currentUser?.displayName || "Me"}</span>
@@ -308,7 +306,7 @@ function Chat_page({}: Props) {
               </div>
             </div>
 
-            {/* 🛠️ จุดเสริม: เปลี่ยน h-full เป็น flex-1 เพื่อให้เลื่อนเมาส์ (Scroll) รายชื่อเพื่อนได้ถูกต้องโดยไม่ดันหน้าจอทะลุ */}
+          
             <div className="flex-1 p-4 overflow-y-auto flex flex-col gap-2">
               {displayUsers.map((user) => {
                 const count = unreadCounts[user.uid] || 0
@@ -340,8 +338,7 @@ function Chat_page({}: Props) {
             </div>
           </div>
 
-          {/* ฝั่งขวา: ห้องแชท */}
-          {/* 🛠️ จุดที่ 3: เพิ่ม overflow-hidden เพื่อบังคับไม่ให้เนื้อหาแชทยืดเลยขอบเขต */}
+        
           <div className="flex-1 h-full bg-white border border-gray-100 flex flex-col overflow-hidden">
             {selectedUser ? (
               <>
