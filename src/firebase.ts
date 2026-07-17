@@ -5,14 +5,13 @@ import { doc, getFirestore, serverTimestamp, setDoc } from "firebase/firestore";
 
 
 const firebaseConfig = {
-   apiKey: "AIzaSyAXlUIGjhMub1yGIr0QdyEpad7-7j1T1gg",
-  authDomain: "mini-project-demo-1300a.firebaseapp.com",
-  projectId: "mini-project-demo-1300a",
-  storageBucket: "mini-project-demo-1300a.firebasestorage.app",
-  messagingSenderId: "942655526778",
-  appId: "1:942655526778:web:ea812ce0807bd6ad09a8c3",
-
-  databaseURL: "https://mini-project-demo-1300a-default-rtdb.asia-southeast1.firebasedatabase.app/"
+   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL
 };
 
 // Initialize Firebase
