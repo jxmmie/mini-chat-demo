@@ -8,12 +8,12 @@ const Card_Login: React.FC = () => {
   const handleLogin = async () => {
     try {
       const user = await loginWithGoogle();
-      alert(`ยินดีต้อนรับพี่เกม! เข้าใช้งานในชื่อ: ${user.displayName}`);
+      alert(`ยินดีต้อนรับ! เข้าใช้งานในชื่อ: ${user.displayName}`);
       navigate('/chat'); // เปลี่ยนหน้าไปยังหน้าหลักของแอปหลังจากล็อกอินสำเร็จ
       
       // พอสำเร็จแล้ว ข้อมูลผู้ใช้คนนี้จะไปโผล่ใน Firebase Console ฝั่ง Firestore ทันที
     } catch (error) {
-      alert("ล็อกอินล้มเหลวพี่สิสัด ลองใหม่ดู!");
+      alert("ล็อกอินล้มเหลว!");
     }
   };
   return (
