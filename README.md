@@ -1,32 +1,39 @@
-# React + TypeScript + Vite
+# Realtime Mini Chat Application 💬
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+เว็บแอปพลิเคชันระบบแชทแบบเรียลไทม์ (End-to-End) ที่พัฒนาขึ้นเพื่อเป็นส่วนหนึ่งของ Final Project โดยเน้นความเสถียร การอัปเดตข้อมูลแบบเสี้ยววินาที และดีไซน์ที่ทันสมัย
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 ลิงก์เข้าใช้งานระบบ (Live Demo)
 
-## React Compiler
+สามารถกดเข้าใช้งานและทดสอบระบบได้ทันทีที่นี่:
+👉 **[https://mini-chat-demo.vercel.app/](https://mini-chat-demo.vercel.app/)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 📖 คู่มือการใช้งานระบบ (How to Use)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+เพื่อให้เห็นหน้าจอการรับ-ส่งข้อความแบบเรียลไทม์อย่างชัดเจน แนะนำให้เปิดใช้งานผ่าน 2 หน้าต่างเบราว์เซอร์ (หรือเปิดแท็บปกติควบคู่กับโหมดไม่ระบุตัวตน / Incognito) แล้วทำตามขั้นตอนต่อไปนี้ครับ:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+### 1. การเข้าสู่ระบบ (Authentication)
+*   **สมัครสมาชิก (Sign Up):** สำหรับการใช้งานครั้งแรก ให้ทำการสมัครสมาชิกใหม่ด้วยอีเมลและรหัสผ่านที่หน้าสมัครสมาชิก
+*   **เข้าสู่ระบบ (Sign In):** หากมีบัญชีอยู่แล้ว สามารถกรอกอีเมลและรหัสผ่านเพื่อเข้าใช้งานได้ทันที
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 2. การตรวจสอบสถานะออนไลน์ (User Presence Status)
+*   เมื่อลงชื่อเข้าใช้งานสำเร็จ ระบบจะทำการเปิดสิทธิ์สถานะให้ผู้ใช้อื่นเห็นว่าคุณกำลัง **Online** ทันที (จะมีสัญลักษณ์หรือไฟสีเขียวแสดงที่รายชื่อ)
+*   หากผู้ใช้ออกจากระบบหรือปิดหน้าต่างเบราว์เซอร์ลงไป ระบบจะเปลี่ยนสถานะเป็น **Offline** โดยอัตโนมัติในทันที
+
+### 3. การเริ่มแชทและอัปเดตแบบเรียลไทม์ (Realtime Chatting)
+*   เลือกรายชื่อเพื่อนที่ต้องการส่งข้อความด้วยจากรายการผู้ใช้งาน
+*   พิมพ์ข้อความที่ต้องการส่งแล้วกดปุ่มส่ง ข้อความจะไปปรากฏที่หน้าจอแชทของเพื่อนร่วมสนทนาทันทีโดยไม่ต้องทำการรีเฟรชหน้าเว็บ
+
+### 4. ระบบเช็คสถานะการอ่านข้อความ (Read Receipt Status)
+*   เมื่อคุณส่งข้อความไปหาเพื่อน และเพื่อนยังไม่ได้เปิดอ่าน จะขึ้นสถานะระบุว่าข้อความยังไม่อ่าน
+*   ทันทีที่เพื่อนร่วมสนทนาเปิดหน้าต่างแชทนั้นขึ้นมาดู ระบบจะทำการอัปเดตสถานะเป็นอ่านแล้ว (`isRead`) ให้ฝั่งคุณเห็นการเปลี่ยนแปลงทันทีแบบเรียลไทม์
+
+---
+
+## 👥 ผู้พัฒนา (Author)
+*   **นายธิวากร จำปาบุรี**
+*   **Email:** thiwakorn.jpbr1@gmail.com
+*   **GitHub:** [@jxmmie](https://github.com/jxmmie)
